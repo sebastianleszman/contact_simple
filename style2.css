@@ -1,0 +1,155 @@
+/* variables */
+:root {
+  --first: #0088a9;
+  --second: #a03e99;
+  --third: #fff5ec;
+  --forth: #7e3279;
+  --fifth: #ff6045;
+  --black: #000;
+  --dark: #333;
+  --silver: #868686;
+  --gray: #ccc;
+  --cream: #f4f4f4;
+  --white: #fff;
+}
+
+.contact {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    'c c i i i i i i i i i i'
+    '. f f f f f f f f f d d';
+}
+
+.panel-form {
+  padding: 2rem 0;
+  grid-area: f;
+}
+
+.panel-information {
+  text-align: left;
+  padding: 1rem 1rem 3rem 1rem;
+  background-color: var(--dark);
+  color: var(--white);
+  grid-area: i;
+}
+
+.panel-empty {
+  grid-area: c;
+  background-color: var(--fifth);
+}
+
+.panel-icon {
+  grid-area: d;
+  background-color: var(--fifth);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.panel-form label {
+  margin-top: 1rem;
+  display: block;
+}
+
+.panel-form input,
+textarea {
+  width: 90%;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  display: inline-block;
+  border-radius: 0;
+  border: none;
+  border-bottom: 1px solid silver;
+  box-shadow: 0;
+  box-shadow: 0px 10px 10px -7px rgba(0, 0, 0, 0.1);
+  -webkit-appearance: none;
+}
+
+.panel-form textarea {
+  border: 1px solid silver;
+  font-family: 'Roboto', sans-serif;
+  margin-top: 2rem;
+}
+
+.panel-form input:focus,
+textarea:focus {
+  outline: none;
+}
+
+.panel-information .icon {
+  color: var(--fifth);
+}
+
+.panel-icon .icon-media {
+  font-size: 1.3rem;
+  padding: 1rem;
+  color: var(--black);
+  background-color: transparent;
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  .img-box {
+    display: block;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  html {
+    font-size: 1.2rem;
+  }
+  .card__img {
+    height: 200px;
+  }
+  .card {
+    display: block;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  html {
+    font-size: 1.4rem;
+  }
+  .main-header__item a {
+    font-size: 1rem;
+  }
+  .contact {
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+      '. . f f f f . . . c c c'
+      '. . f f f f . . i i i i'
+      '. . f f f f . . . d d d';
+  }
+
+  .panel-information {
+    box-shadow: 0px 13px 15px -5px rgba(0, 0, 0, 0.9);
+    z-index: 10;
+  }
+
+  .panel-icon {
+    flex-direction: row;
+  }
+
+  input,
+  textarea {
+    padding: 0.5rem;
+    margin-top: 0.3rem;
+  }
+
+  textarea {
+    margin-top: 1rem;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  html {
+    font-size: 1.6rem;
+  }
+}
